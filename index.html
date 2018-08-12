@@ -1,0 +1,223 @@
+ <!--
+
+
+	Dependencies:
+	- module-lang 	OK
+
+-->
+
+<html>
+    <head>
+        <title>Test Prototype</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Lib: jQuery -->
+        <script src="lib/jquery/jquery-2.2.0.min.js"></script>
+       
+        <!-- Lib: Bootstrap -->
+        <link href="lib/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <script src="lib/bootstrap/bootstrap.min.js"></script>
+
+        <!-- Lib: Crossfliter -->
+        <script src="lib/crossfilter/crossfilter.min.js"></script>
+        
+        <!-- Lib: D3 -->
+        <script src="lib/d3/d3.min.js"></script>
+
+        <!-- Lib: D3-queue -->
+        <script src="lib/d3-queue/queue.v1.min.js"></script>
+
+        <!-- Lib: geostats -->
+        <script src="lib/geostats/geostats.min.js"></script> 
+
+        <!-- Lib: DC -->
+        <link href="lib/dc/dc.min.css" rel="stylesheet" type="text/css"/>
+        <script src="lib/dc/dc.min.js"></script>
+
+        <!-- Lib: Leaflet -->
+        <script>L_PREFER_CANVAS = true;</script>
+        <link href="lib/leaflet/leaflet.css" rel="stylesheet" type="text/css"/>
+        <script src="lib/leaflet/leaflet.js"></script>
+
+        <!-- Lib: L.Map.Sync -->
+        <script src="lib/leaflet.sync/L.Map.Sync.js"></script>
+
+        <!-- Lib: datatables -->
+        <link href="lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <script src="lib/datatables/jquery.dataTables.min.js"></script>
+        <link href="lib/datatables/buttons.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <script src="lib/datatables/buttons.html5.min.js"></script>
+        <script src="lib/datatables/dataTables.buttons.min.js"></script>
+
+        <!-- Lib: leaflet.image -->
+        <script src="lib/leaflet.image/leaflet-image.js"></script>
+        <script src="lib/leaflet.image/dc-image.js"></script>
+        
+        <!-- Lib: intro -->
+        <link href="lib/intro/introjs.css" rel="stylesheet" type="text/css"/>
+        <script src="lib/intro/intro.js"></script>
+
+        <!-- Website: .css -->
+        <link href="css/index.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+
+<!--**************************************************************************************
+        The part below has to be re-writed for each dashboard, it defines
+        the disposition of the graphs.
+**************************************************************************************-->
+
+        <div class="container">
+
+            <!-- Header -->
+            <div id="header" class="row">
+                <h2 id="title">Prototype</h2>
+                <div class="col-md-12">  
+                    <p id="main_description"></p>
+                </div>                 
+            </div>
+
+            <div class="row">
+
+		<!-- Maps -->
+                <div class="col-md-12">
+                    <div id="chart-multiadm" class = "row"></div>
+                </div>
+            </div>
+
+        <!-- Other Graphs -->                                                                              
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="buttons-disease"></div>
+                    <div id="chart-disease" class="viz">
+                        <p style="height: 60px;"><span id="chart_disease_title"></span> <span class="filter"> </span></p>
+                    </div>
+                </div>  
+                <div id="containter_bar-lin" class="col-md-10">
+                    <div id="containter_bar-lin_tabs"></div>
+                    <div id="containter_bar">
+                        <div class="col-md-9" id="container_casedeath_bar">
+                            <div class="row">                        
+                                <div class="col-md-12">
+                                    <div id="buttons-case_bar"></div>
+                                    <div id="chart-case_bar" class="viz">
+                                        <p style="height: 30px;"><span id="chart_case_bar_title"></span> <span class="filter"> </span></p>
+                                    </div>                         
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="chart-death_bar" class="viz"></div>
+                                </div>
+                            </div>                                                    
+                        </div>
+                        <div class="col-md-3">
+                            <div id="buttons-fyo"></div>
+                            <div id="chart-fyo" class="viz">
+                                <p style="height: 45px;"><span id="chart_fyo_title"></span> <span class="filter"> </span></p>
+                            </div>
+                        </div>    
+                    </div>
+                    <div id="containter_lin">
+                        <div class="col-md-9" id="container_casedeath_lin">
+                            <div class="row">                        
+                                <div class="col-md-12">
+                                    <div id="buttons-case_lin"></div>
+                                    <div id="chart-case_lin" class="viz">
+                                        <p style="height: 30px;"><span id="chart_case_lin_title"></span> <span class="filter"> </span></p>
+                                    </div>                         
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="chart-death_lin" class="viz"></div>
+                                </div>
+                            </div>                                                    
+                        </div>
+                        <div class="col-md-3">
+                            <div id="buttons-year"></div>
+                            <div id="chart-year" class="viz">
+                                <p style="height: 45px;"><span id="chart_year_title"></span> <span class="filter"> </span></p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+
+        <!-- Datatable -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <p><a id="more-table"></a></p>
+                        <div id="container-table" hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Menu -->
+        <div class="row">
+            <div id="menu"></div>
+        </div>
+
+        <!-- Data loading -->
+        <div id="modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+
+<!--**************************************************************************************
+**************************************************************************************-->
+
+
+        <!-- Home development .js -->        
+        <script>
+            // Global Variables: permanent and modules list  
+            var g = {};
+            var modules_list = {};
+
+            modal_loading();
+
+            function modal_loading() {
+                $('.modal-content').html('<div id="loading" class="modal-body"><h2>Loading...</h2></div>');
+            }
+        </script>
+        
+        <link href="css/module-lang.css" rel="stylesheet" type="text/css"/>
+        <script src="lang/module-lang.js"></script>
+        
+        <script src="user/user-defined.js"></script>
+
+        <!-- Lib: DC-Leaflet Here as some text needs to be translated -->
+        <script src="lib/dc.leaflet/dc.leaflet.js"></script>
+
+        <link href="css/module-datacheck.css" rel="stylesheet" type="text/css"/>
+        <script src="js/module-datacheck.js"></script>
+
+        <link href="css/module-colorscale.css" rel="stylesheet" type="text/css">
+        <script src="js/module-colorscale.js"></script>
+
+        <link href="css/module-multiadm.css" rel="stylesheet" type="text/css">
+        <script src="js/module-multiadm.js"></script>
+
+        <link href="css/module-chartwarper.css" rel="stylesheet" type="text/css">
+        <script src="js/module-chartwarper.js"></script>
+
+        <link href="css/module-datatable.css" rel="stylesheet" type="text/css">
+        <script src="js/module-datatable.js"></script>
+
+        <link href="css/main-core.css" rel="stylesheet" type="text/css">
+        <script src="js/main-core.js"></script>
+
+        <link href="css/module-intro.css" rel="stylesheet" type="text/css"/>
+        <script src="js/module-intro.js"></script>
+
+        <link href="css/module-interface.css" rel="stylesheet" type="text/css"/>
+        <script src="js/module-interface.js"></script>
+
+        <link href="css/main-loadfiles.css" rel="stylesheet" type="text/css"/>        
+        <script src="js/main-loadfiles.js"></script>  
+    </body>
+</html>

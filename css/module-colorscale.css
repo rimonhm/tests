@@ -1,0 +1,13 @@
+/*------------------------------------------------------------------------------------
+	MSF Dashboard - module-colorscale.js
+	(c) Bruno Raimbault for MSF UK
+	Please refer to the README.txt for complete licenses.
+------------------------------------------------------------------------------------*/
+
+.mcs_inp {
+  width: 4em;
+}
+.select-cs{
+    width:150px;
+    font-size:0.9em;
+}

@@ -1,0 +1,26 @@
+/*------------------------------------------------------------------------------------
+	
+------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "dejavu";
+    src: url(script/DejaVuSans.ttf) format("truetype");
+}
+
+.ft{
+    font-family: "dejavu";
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container{
+    padding-left:10%;
+    padding-bottom:20px;
+}
+
+.viz{
+    width:100%;
+    padding-bottom:10px;
+}

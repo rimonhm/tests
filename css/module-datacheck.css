@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------------------------
+	MSF Dashboard - module-datacheck.css
+	(c) Bruno Raimbault for MSF UK
+	Please refer to the README.txt for complete licenses. 
+------------------------------------------------------------------------------------*/
+
+#more-datacheck{
+	cursor:pointer;
+}
+
+#datacheck_pre{
+	max-height: 180px;
+	overflow-y: scroll;
+}

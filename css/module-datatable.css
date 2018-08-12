@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------------------------
+	MSF Dashboard - module-datatable.css
+	(c) Bruno Raimbault for MSF UK
+	Please refer to the README.txt for complete licenses.
+------------------------------------------------------------------------------------*/
+
+#copyBtn{
+    position: absolute;
+    right: 40px !important;
+    top: -10px;
+}
+
+#more-table{
+	cursor:pointer;
+}

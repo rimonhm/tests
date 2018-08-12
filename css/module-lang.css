@@ -1,0 +1,16 @@
+/*------------------------------------------------------------------------------------
+	MSF Dashboard - module-lang.css
+	(c) Bruno Raimbault for MSF UK
+	Please refer to the README.txt for complete licenses. 
+------------------------------------------------------------------------------------*/
+
+.link{
+	cursor:pointer;
+}
+
+#langselect{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+
+}

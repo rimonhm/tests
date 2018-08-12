@@ -1,0 +1,17 @@
+/*------------------------------------------------------------------------------------
+	MSF Dashboard - main-loadfiles.css
+	(c) Bruno Raimbault for MSF UK
+	Please refer to the README.txt for complete licenses.
+------------------------------------------------------------------------------------*/
+
+/* Intro page styles */
+.modal-dialog {
+    width: 800px;
+}
+.modal-content {
+    padding:20px;    
+ }
+
+.select-lf{
+    width:40%;
+}
